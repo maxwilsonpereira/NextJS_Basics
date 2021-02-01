@@ -52,6 +52,7 @@ export default function Home() {
         height={80}
       />
       <br /> <br />
+      SOME CHANGES!!!
       {/* <form method="POST" action="/api/login"> */}
       <form onSubmit={submitForm}>
         <input
