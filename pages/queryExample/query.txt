@@ -1,0 +1,2 @@
+EXAMPLE OF USING QUERY AT FILE:
+pages/profile/index.js

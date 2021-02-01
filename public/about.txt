@@ -1,0 +1,6 @@
+PUBLIC is a static folder.
+This is just a example of how you can access any file
+inside the public folder!
+Everything inside the public folder can be accessed by anyone!
+To access:
+http://localhost:3000/about.txt

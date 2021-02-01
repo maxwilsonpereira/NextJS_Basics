@@ -1,0 +1,62 @@
+// VARIABLES:
+$fontColor: darkred;
+
+.container {
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px;
+}
+.container h1 {
+  color: $fontColor;
+}
+.container h3 {
+  color: rgb(88, 88, 88);
+  font-weight: 100;
+  margin-top: 5px;
+}
+.btnHome {
+  width: 100%;
+  max-width: 300px;
+  margin: 5px 0;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: rgb(143, 150, 182);
+  border-width: 0px;
+  box-shadow: inset 0px 0px 5px 2px rgb(0, 0, 0);
+  transition: 0.2s ease-in-out;
+}
+.btnHome:hover {
+  cursor: pointer;
+  background-color: rgb(116, 130, 190);
+}
+.uppercase {
+  // text-transform: capitalize;
+  text-transform: uppercase;
+}
+.link {
+  color: blue;
+  font-weight: bold;
+}
+.link:hover {
+  color: darkblue;
+}
+.linkRed {
+  color: red;
+  font-weight: bold;
+}
+.linkRed:hover {
+  color: darkred;
+}
+
+.counterCircle {
+  background-color: darkred;
+  color: white;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  padding: 22px;
+  border-radius: 50%;
+  font-size: 25px;
+}

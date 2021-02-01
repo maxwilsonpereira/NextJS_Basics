@@ -1,0 +1,60 @@
+// VARIABLES:
+$fontColor: darkred;
+
+.container {
+  min-height: 100%;
+  text-align: center;
+  // padding: 40px;
+}
+.title {
+  color: $fontColor;
+  font-size: 15vw;
+}
+@media (min-width: 800px) {
+  .title {
+    font-size: 100px;
+  }
+}
+.subTitle {
+  font-size: 3vw;
+}
+@media (min-width: 800px) {
+  .subTitle {
+    font-size: 25px;
+  }
+}
+.container input {
+  width: 100%;
+  max-width: 300px;
+  margin: 5px 0;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 1.2em;
+  color: #2f2f2f;
+  border-color: rgb(0, 0, 0);
+  border-width: 0px;
+  box-shadow: inset 0px 0px 5px 2px rgb(0, 0, 0);
+}
+
+.btnLogin {
+  color: white !important;
+  background-color: rgb(143, 150, 182);
+  transition: 0.2s ease-in-out;
+}
+.btnLogin:hover {
+  cursor: pointer;
+  background-color: rgb(116, 130, 190);
+}
+.goToLink {
+  cursor: pointer;
+  font-size: 20px !important;
+  color: rgb(67, 67, 223) !important;
+  transition: 0.2s ease-in-out;
+}
+.goToLink:hover {
+  text-shadow: 1px 1px #000000;
+}
+
+.maxmixlogo {
+  border-radius: 20%;
+}

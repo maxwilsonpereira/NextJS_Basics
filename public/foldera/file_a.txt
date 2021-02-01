@@ -1,0 +1,2 @@
+This file is accessible at:
+http://localhost:3000/foldera/file_a.txt

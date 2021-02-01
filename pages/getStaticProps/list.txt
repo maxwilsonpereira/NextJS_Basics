@@ -1,0 +1,3 @@
+This text is writen on the list.txt file!
+It was writen with fileSystem on the server and broght here 
+with "getStaticProps".
