@@ -1,1 +1,3 @@
 SAMPLE A!
+
+http://localhost:3000/samples.sample_a.txt

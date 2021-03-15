@@ -8,7 +8,7 @@ export default function Error404Handler() {
   const [counter, setCounter] = useState<number>(3);
 
   useEffect(() => {
-    console.log("ASASAS", router.query);
+    console.log("********** router.query: ", router.query);
     setTimeout(() => {
       router.push("/");
     }, 3000);
