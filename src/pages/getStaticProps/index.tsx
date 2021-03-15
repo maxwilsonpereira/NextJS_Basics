@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // node.js method here. Example:
   const fs = require("fs");
   const listTxt = fs.readFileSync(
-    path.join(process.cwd(), "pages/getStaticProps/list.txt"),
+    path.join(process.cwd(), "src/pages/getStaticProps/list.txt"),
     "utf8"
   );
 

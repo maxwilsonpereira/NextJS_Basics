@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../global.module.scss";
+import styles from "../../pages/global.module.scss";
 
 export default function LinkExample() {
   return (

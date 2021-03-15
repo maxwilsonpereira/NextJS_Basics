@@ -1,2 +1,2 @@
 EXAMPLE OF USING QUERY AT FILE:
-pages/profile/index.js
+src/pages/profile/index.js

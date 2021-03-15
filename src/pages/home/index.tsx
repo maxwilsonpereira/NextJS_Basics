@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./style.module.scss";
 import stylesGlobal from "../global.module.scss";
 import jwt from "jsonwebtoken";
-import LinkExample from "../link";
+import LinkExample from "../../components/link";
 
 export default function Home() {
   const [username, setUsername] = useState<string>("");
