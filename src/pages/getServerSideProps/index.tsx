@@ -1,5 +1,5 @@
-// *** AVOID USING GetServerSideProps, because it is
-// called on every request, even on production!
+// *** AVOID USING GetServerSideProps, because it is called
+// on every request, every time the browser realods, even on production!
 
 // http://localhost:3000/getServerSideProps
 import { GetServerSideProps } from "next";

@@ -1,9 +1,14 @@
+// * Progressbar / Spinner: Look file _app.tsx
+
 // getStaticProps runs at BUILD TIME! It does NOT RUN AT RUNTIME!
 // All the values got inside it are going to be rendered on the browser,
 // like this would be a static page.
+// OBS: GetStaticProps ONLY WORK WITHOUT GetStaticPaths
+// on "stand alone pages", like this one.
+// GetStaticPaths will work only on dynamic pages with [].
 
 // http://localhost:3000/getStaticProps
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import styles from "../global.module.scss";
@@ -11,10 +16,8 @@ import path from "path";
 import DynamicComponent from "./dynamic";
 
 // SERVER EXECUTION:
-// OBS: GetStaticProps ONLY WORK WITHOUT GetStaticPaths
-// on "stand alone pages", like this one.
-// GetStaticPaths will work only on dynamic pages with [].
 export const getStaticProps: GetStaticProps = async (context) => {
+  // Here inside you can fetch all the data you need before the component is rendered.
   // Console.log inside getStaticProps will be shown on the backend console!
   // Because it will be executed on the server, you can use any
   // node.js method here. Example:
@@ -24,26 +27,32 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "utf8"
   );
 
-  // Fetching some data:
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const usersFetched = await response.json();
+  const fetchSimulation = [];
+  const fetchedDataAux = [];
+  // Simulating a large amount of data to be fetch:
+  for (let i = 0; i < 150; i++) {
+    fetchSimulation[i] = await fetch(
+      "https://jsonplaceholder.typicode.com/comments"
+    );
+    fetchedDataAux[i] = await fetchSimulation[i].json();
+  }
 
   return {
+    props: {
+      textFromFile: listTxt,
+      fetchedData: fetchedDataAux[0],
+    },
     // REVALIDATE (optional) will refresh the page every X seconds
     // (it just works on PRODUCTION):
     revalidate: 600,
-    props: {
-      textFromFile: listTxt,
-      usersFetched: usersFetched,
-    },
   };
 };
 
 // SERVER + CLIENT EXECUTION:
 // Next function will be executed on the server to get the props
 // AND on the client, of course, to render on the browser.
-export default function GetStaticPropsIndex({ textFromFile, usersFetched }) {
-  console.log("*********** usersFetched:", usersFetched); // Leanne Graham
+export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
+  //   console.log("*********** fetchedData:", fetchedData);
   const [toggleComponent, setToggleComponent] = useState<boolean>(false);
   const router = useRouter();
   function backToHome() {
@@ -63,34 +72,31 @@ export default function GetStaticPropsIndex({ textFromFile, usersFetched }) {
       ) : (
         <div className={styles.container}>
           <h1>GetStaticProps - Static Site Generation (SSG)</h1>
+          <h2>Look how fast I am!</h2>
           <hr className={styles.horizontalLine} />
           <h2>
-            Look the image on the bottom of this page (or look the real html
-            code on the console) to see how the HTML looks like using
-            GetStaticProps.
+            The data on this page will be fetched at buid time, that means the
+            data will be fetched once and from this moment it will stay on the
+            client side as if the page would be a static page.
             <br />
-            All the infos are there! Very good for SEO!
-            <br />
+            The page is loaded much faster (almost instantly) after the first
+            time it was visited and this method of rendering improves a lot the
+            SEO engines.
           </h2>
-          <hr className={styles.horizontalLine} />
-          <h2>Some data fetched with getStaticProps on the server side:</h2>
-          {usersFetched.map((user, index) => (
-            <h4 key={usersFetched.id}>
-              NAME: {usersFetched[index].name} / EMAIL:{" "}
-              {usersFetched[index].email}
-            </h4>
-          ))}
-          <hr className={styles.horizontalLine} />
           <h3>
-            <b>TEXT FROM FILE list.txt:</b>
+            A "revalidate" attribute can be used inside getStaticProps function
+            to make it fetch the data agina after a disered time.
           </h3>
-          <p>{textFromFile}</p>
+          <h2>
+            <span className={styles.fontRed}>
+              * Same amount of data being fetched on each page!
+            </span>
+          </h2>
           <hr className={styles.horizontalLine} />
           <h2>
-            Press the button "Dynamic" to see this same page built with
-            useEffect, that means, dinamicly:
+            Press the button "Dynamic" to the same page being rendered using
+            React useEffect, that means, dynamically:
           </h2>
-          <br />
           <br />
           <button
             className={[styles.btnHome, styles.btnHomeGreen].join(" ")}
@@ -99,10 +105,26 @@ export default function GetStaticPropsIndex({ textFromFile, usersFetched }) {
             Dynamic
           </button>
           <br />
-          <br />
           <button className={styles.btnHome} onClick={backToHome}>
             Back to Home
           </button>
+          <hr className={styles.horizontalLine} />
+          <h2>
+            Some of the data fetched with getStaticProps on the server side:
+          </h2>
+          {fetchedData &&
+            fetchedData.map((data) => (
+              <h4 key={data.id}>
+                <span className={styles.fontRed}>NAME: </span>
+                {data.name} / <span className={styles.fontRed}>EMAIL:</span>{" "}
+                {data.email}
+              </h4>
+            ))}
+          <hr className={styles.horizontalLine} />
+          <h3>
+            <b>EXTRA TEXT FILE FETCHED FROM THE FILE list.txt:</b>
+          </h3>
+          <p>{textFromFile}</p>
           <br />
           <br />
           <br />

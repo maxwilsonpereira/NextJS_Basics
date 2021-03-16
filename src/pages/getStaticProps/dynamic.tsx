@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 // npm install @material-ui/core
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "../global.module.scss";
 
@@ -16,7 +15,7 @@ interface User {
 }
 
 const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
-  const [usersFetched, setUsersFetched] = useState<User[]>([]);
+  const [fetchedData, setFetchedData] = useState<User[]>([]);
   const router = useRouter();
   function backToHome() {
     router.push("/"); // BACK FUNCTION WILL BE AVAILABLE
@@ -26,43 +25,45 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      const usersFetchedAux = await response.json();
-      setUsersFetched(usersFetchedAux);
+      const fetchSimulation = [];
+      const fetchedDataAux = [];
+      // Simulating a large amount of data to be fetch
+      for (let i = 0; i < 150; i++) {
+        fetchSimulation[i] = await fetch(
+          "https://jsonplaceholder.typicode.com/comments"
+        );
+        fetchedDataAux[i] = await fetchSimulation[i].json();
+      }
+      setFetchedData(fetchedDataAux[0]);
     }
     fetchData();
   });
 
   return (
     <div className={styles.container}>
-      {usersFetched.length < 1 ? (
+      {fetchedData.length < 1 ? (
         <CircularProgress color="primary" />
       ) : (
         <>
-          <h1>Dinamic Rendering with React</h1>
+          <h1>Dinamic Rendering with React useState</h1>
           <hr className={styles.horizontalLine} />
           <h2>
-            Look the image on the bottom of this page (or look the real html
-            code on the console) to see how the HTML looks like without using
-            GetStaticProps.
+            The data on this page was fetched using useEffect (run time
+            fetching). That means that all the data will need to be fetched
+            again every time the page is loaded or refreshed.
             <br />
-            The infos are NOT there! Bad for SEO!
+            The time it takes to load the page will be always the same
+            (depending on the connection).
             <br />
+            Using "getStaticProps" would make it much faster after the first
+            visit.
+            <br />
+            <span className={styles.fontRed}>
+              * Same amount of data being fetched on each page!
+            </span>
           </h2>
           <hr className={styles.horizontalLine} />
-
-          <h2>Some data fetched with useEffect on the client side:</h2>
-          {usersFetched.map((user, index) => (
-            <h4 key={usersFetched[index].id}>
-              NAME: {usersFetched[index].name} / EMAIL:{" "}
-              {usersFetched[index].email}
-            </h4>
-          ))}
-          <hr className={styles.horizontalLine} />
-          <h2>Press the button "Static" to come back to the preview page.</h2>
-          <br />
+          <h2>Press the button "Static" to come back to the preview page:</h2>
           <br />
           <button
             className={[styles.btnHome, styles.btnHomeGreen].join(" ")}
@@ -71,10 +72,21 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
             Static
           </button>
           <br />
-          <br />
           <button className={styles.btnHome} onClick={backToHome}>
             Back to Home
           </button>
+          <hr className={styles.horizontalLine} />
+          <h2>
+            Some of the data fetched using React useEffect on the client side:
+          </h2>
+          {fetchedData.map((data, index) => (
+            <h4 key={data.id}>
+              <span className={styles.fontRed}>NAME: </span>
+              {data.name} / <span className={styles.fontRed}>EMAIL:</span>{" "}
+              {data.email}
+            </h4>
+          ))}
+          <hr className={styles.horizontalLine} />
           <br />
           <br />
           <br />

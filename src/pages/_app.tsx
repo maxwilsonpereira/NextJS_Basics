@@ -1,3 +1,7 @@
+// Progressbar / Spinner for the case of using getStaticProps:
+// https://www.npmjs.com/package/nextjs-progressbar
+// npm i nextjs-progressbar
+import NextNprogress from "nextjs-progressbar";
 // GLOBAL CSS files MUST BE imported here, at _app.tsx:
 import "./globals.css";
 
@@ -7,7 +11,17 @@ function MyApp({ Component, pageProps }) {
   );
   // Internally, NEXT.JS passes all the pages on this <Component/> as props,
   // beginning with the file index.tsx:
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <NextNprogress
+        color="#29D"
+        startPosition={0.5}
+        stopDelayMs={200}
+        height={2}
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
