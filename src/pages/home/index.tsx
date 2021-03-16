@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./style.module.scss";
@@ -37,22 +38,46 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>This Title is just for SEO!</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <span className={styles.title}>Next.ts</span>
       <br />
-      <span className={styles.subTitle}>Next.js with typeScript!</span>
+      <span className={styles.subTitle}>Next.js with typeScript by</span>
       <br />
       <br />
       {/* IMAGE: */}
       {/* src="/favicon.jpg" -> Consider / as the public folder: */}
-      <Image
-        className={styles.maxmixlogo}
-        src="/images/maxmixlogo.jpg"
-        alt=""
-        width={80}
-        height={80}
-      />
-      <br /> <br />
+      <a
+        href="https://www.maxmixdigital.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className={styles.maxmixlogo}
+          src="/images/maxmixlogo.jpg"
+          alt=""
+          width={80}
+          height={80}
+        />
+      </a>
+      <br />
+      <a
+        href="https://github.com/maxwilsonpereira/NextJS_Basics
+        "
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3 className={stylesGlobal.link}>Source code on gitHub</h3>
+      </a>
+      <hr className={stylesGlobal.horizontalLine} />
       {/* <form method="POST" action="/api/login"> */}
+      <h3>
+        Login simulation using the native Next.js API (for "admin access":
+        username: maxwilson and password: pass123):
+      </h3>
+      <br />
       <form onSubmit={submitForm}>
         <input
           type="text"
@@ -70,19 +95,22 @@ export default function Home() {
         <br />
         <input className={styles.btnLogin} type="submit" value="LOGIN" />
       </form>
-      <br />
-      <h3>{message}</h3>
-      <br />
-      <LinkExample />
-      <br />
-      <br />
-      <Link href="/pagenames">
-        <a className={stylesGlobal.link}>Page Names with Folder Structure</a>
-      </Link>
-      <br /> <br />
+      {message ? (
+        <>
+          <br />
+          <h3>{message}</h3>
+        </>
+      ) : null}
+      <hr className={stylesGlobal.horizontalLine} />
       <h2>
         <Link href="/getStaticProps">
-          <a className={stylesGlobal.linkRed}>getStaticProps Example</a>
+          <a
+            className={[stylesGlobal.linkRed, stylesGlobal.fontLarger].join(
+              " "
+            )}
+          >
+            getStaticProps Example
+          </a>
         </Link>
         <br />
         <Link href="/getStaticPaths/route1">
@@ -93,7 +121,14 @@ export default function Home() {
           <a className={stylesGlobal.linkRed}>getServerSideProps Example</a>
         </Link>
       </h2>
+      <hr className={stylesGlobal.horizontalLine} />
+      <LinkExample />
       <br />
+      <br />
+      <Link href="/pagenames">
+        <a className={stylesGlobal.link}>Page Names with Folder Structure</a>
+      </Link>
+      <hr className={stylesGlobal.horizontalLine} />
       <h3>
         {/* OMIT PUBLIC: <Link href="../../public/about.txt"> */}
         <Link href="../../about.txt">
@@ -104,6 +139,9 @@ export default function Home() {
           <a className={stylesGlobal.link}>File public/foldera/file_a.txt</a>
         </Link>
       </h3>
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 import styles from "../global.module.scss";
 // access as administrator:
 // http://localhost:3000/profile?username=Max&admin=yes
@@ -12,6 +13,10 @@ export default function Profile() {
   }
   return (
     <div className={styles.container}>
+      <Head>
+        <title>This Title is just for SEO!</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {router.query.admin === "yes" ? (
         <>
           <h1>

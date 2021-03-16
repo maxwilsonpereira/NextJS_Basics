@@ -3,6 +3,9 @@ $fontColor: darkred;
 
 .container {
   min-height: 100vh;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   padding: 40px;
 }
@@ -14,6 +17,10 @@ $fontColor: darkred;
   font-weight: 100;
   margin-top: 5px;
 }
+.container h4 {
+  line-height: 5px;
+}
+
 .btnHome {
   width: 100%;
   max-width: 300px;
@@ -31,25 +38,37 @@ $fontColor: darkred;
   cursor: pointer;
   background-color: rgb(116, 130, 190);
 }
+.btnHomeGreen {
+  color: #ffffff;
+  background-color: rgb(39, 138, 59);
+}
+.btnHomeGreen:hover {
+  cursor: pointer;
+  background-color: rgb(16, 107, 34);
+}
 .uppercase {
   // text-transform: capitalize;
   text-transform: uppercase;
 }
 .link {
-  color: blue;
+  font-size: 20px;
+  color: rgb(1, 1, 138);
   font-weight: bold;
 }
 .link:hover {
-  color: darkblue;
+  color: rgb(0, 0, 58);
 }
 .linkRed {
-  color: red;
+  font-size: 22px;
+  color: rgb(167, 1, 1);
   font-weight: bold;
 }
 .linkRed:hover {
-  color: darkred;
+  color: rgb(100, 1, 1);
 }
-
+.fontLarger {
+  font-size: 30px;
+}
 .counterCircle {
   background-color: darkred;
   color: white;
@@ -59,4 +78,8 @@ $fontColor: darkred;
   padding: 22px;
   border-radius: 50%;
   font-size: 25px;
+}
+.horizontalLine {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
