@@ -79,6 +79,7 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
           <h2>
             Some of the data fetched using React useEffect on the client side:
           </h2>
+          <br />
           {fetchedData.map((data, index) => (
             <h4 key={data.id}>
               <span className={styles.fontRed}>NAME: </span>

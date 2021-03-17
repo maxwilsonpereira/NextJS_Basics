@@ -112,6 +112,7 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
           <h2>
             Some of the data fetched with getStaticProps on the server side:
           </h2>
+          <br />
           {fetchedData &&
             fetchedData.map((data) => (
               <h4 key={data.id}>
