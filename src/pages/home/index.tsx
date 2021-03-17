@@ -110,7 +110,7 @@ export default function Home() {
               " "
             )}
           >
-            getStaticProps
+            &#9733; getStaticProps &#9733;
           </a>
         </Link>
         <br />
