@@ -83,8 +83,8 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
           </h2>
           <hr className={styles.horizontalLine} />
           <h2>
-            The data on this page will be fetched at buid time, that means the
-            data will be fetched once and from this moment it will stay on the
+            The data on this page was fetched at buid time, that means the data
+            was fetched only once and from that moment it will stay on the
             client side as if the page would be a static page.
             <br />
             The page is loaded much faster (almost instantly) after the first
