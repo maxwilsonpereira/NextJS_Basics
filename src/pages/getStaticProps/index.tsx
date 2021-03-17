@@ -128,9 +128,7 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
             <b>EXTRA TEXT FILE FETCHED FROM THE FILE list.txt:</b>
           </h3>
           <p>{textFromFile}</p>
-          <br />
-          <br />
-          <br />
+          <hr className={styles.horizontalLine} />
         </div>
       )}
     </>

@@ -34,6 +34,7 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
         );
         fetchedDataAux[i] = await fetchSimulation[i].json();
       }
+
       setFetchedData(fetchedDataAux[0]);
     }
     fetchData();
@@ -42,7 +43,14 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
   return (
     <div className={styles.container}>
       {fetchedData.length < 1 ? (
-        <CircularProgress color="primary" />
+        <div className={styles.progressCircle}>
+          <CircularProgress color="primary" />
+          <br />
+          <br />
+          <h4>
+            <i>Loading...</i>
+          </h4>
+        </div>
       ) : (
         <>
           <h1>Dinamic Rendering with React useState</h1>
@@ -94,9 +102,6 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
             </h4>
           ))}
           <hr className={styles.horizontalLine} />
-          <br />
-          <br />
-          <br />
         </>
       )}
     </div>

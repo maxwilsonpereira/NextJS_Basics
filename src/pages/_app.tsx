@@ -4,6 +4,7 @@
 import NextNprogress from "nextjs-progressbar";
 // GLOBAL CSS files MUST BE imported here, at _app.tsx:
 import "./globals.css";
+import Footer from "../components/footer";
 
 function MyApp({ Component, pageProps }) {
   console.log(
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         height={2}
       />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

@@ -7,7 +7,7 @@ $fontColor: darkred;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding: 20px;
+  padding: 30px 80px 30px 80px;
 }
 .container h1 {
   color: $fontColor;
@@ -90,9 +90,20 @@ $fontColor: darkred;
 .marginBottom5 {
   margin-bottom: 5px;
 }
+.progressCircle {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 /* ***** MOBILE ***** */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .container {
+    padding: 20px;
+  }
   .container h1 {
     font-size: 1.4rem;
   }
