@@ -125,8 +125,9 @@ export default function Home() {
       <hr className={stylesGlobal.horizontalLine} />
       <LinkExample />
       <hr className={stylesGlobal.horizontalLine} />
+      <h2>EXAMPLE OF PAGES IN NEXT.JS:</h2>
       <Link href="/pagenames">
-        <a className={stylesGlobal.link}>Page Names with Folder Structure</a>
+        <a className={stylesGlobal.link}>Page Names: Folder Names</a>
       </Link>
       <hr className={stylesGlobal.horizontalLine} />
       <h3>

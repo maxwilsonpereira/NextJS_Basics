@@ -7,17 +7,26 @@ import styles from "../global.module.scss";
 export default function Route() {
   return (
     <div className={styles.container}>
-      <h1>CURRENT: pages/pagenames/page1</h1>
+      <h1>
+        Page: pagenames/page1
+        <br />
+        Folder: pages/pagenames/page1
+      </h1>
       <br />
       <br />
       <Link href="/pagenames/page2">
-        <a className={styles.link}>Go to pages/pagenames/page2</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Page 2</a>
+        </button>
       </Link>
-      <br />
       <br />
       <Link href="/pagenames">
-        <a className={styles.link}>Back to "pagenames"</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Back to "pagenames"</a>
+        </button>
       </Link>
+      <br />
+      <br />
     </div>
   );
 }

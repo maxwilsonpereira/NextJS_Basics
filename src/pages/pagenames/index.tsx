@@ -12,21 +12,31 @@ export default function Route() {
   }
   return (
     <div className={styles.container}>
-      <h1>Page Folder: pages/pagenames</h1>
+      <h1>
+        Page: pagenames
+        <br />
+        Folder: pages/pagenames
+      </h1>
       <br />
       <br />
       <Link href="/pagenames/page1">
-        <a className={styles.link}>Page 1</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Page 1</a>
+        </button>
       </Link>
       <br />
       <Link href="/pagenames/page2">
-        <a className={styles.link}>Page 2</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Page 2</a>
+        </button>
       </Link>
       <br />
       <br />
       <button className={styles.btnHome} onClick={backToHome}>
         Back to Home
       </button>
+      <br />
+      <br />
     </div>
   );
 }
