@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
     // REVALIDATE (optional) will refresh the page every X seconds
     // (it just works on PRODUCTION):
-    revalidate: 600,
+    // revalidate: 600,
   };
 };
 
