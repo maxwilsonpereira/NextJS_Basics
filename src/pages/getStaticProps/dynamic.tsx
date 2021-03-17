@@ -83,7 +83,7 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
             </span>
           </h2>
           <hr className={styles.horizontalLine} />
-          <h2>Press the button "SSG" to come back to the preview page:</h2>
+          <h2>Press the button "SSR" to come back to the preview page:</h2>
           <br />
           <button
             className={[styles.btnHome, styles.btnHomeGreen].join(" ")}
