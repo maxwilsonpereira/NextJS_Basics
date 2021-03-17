@@ -2,9 +2,14 @@
 // http://localhost:3000/pagenames/page1
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../global.module.scss";
 
 export default function Route() {
+  const router = useRouter();
+  function backToHome() {
+    router.push("/");
+  }
   return (
     <div className={styles.container}>
       <h1>
@@ -25,6 +30,11 @@ export default function Route() {
           <a className={styles.linkFontWhite}>Back to "pagenames"</a>
         </button>
       </Link>
+      <br />
+      <br />
+      <button className={styles.btnHome} onClick={backToHome}>
+        Back to Home
+      </button>
       <br />
       <br />
     </div>

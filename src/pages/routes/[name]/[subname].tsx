@@ -14,7 +14,9 @@ export default function RoutesLevel2() {
       <h2>Name: {router.query.subname}</h2>
       <br />
       <Link href="/routes/whatever">
-        <a className={styles.btnHome}>Back to Level 2</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Back to Level 2</a>
+        </button>
       </Link>
     </div>
   );

@@ -73,10 +73,10 @@ export default function Home() {
       </a>
       <hr className={stylesGlobal.horizontalLine} />
       {/* <form method="POST" action="/api/login"> */}
-      <h3>
-        Login simulation using the native Next.js API (for "admin access":
-        username: maxwilson and password: pass123):
-      </h3>
+      <h2>LOGIN SIMULATION:</h2>
+      <h3>Login simulation using the native Next.js API:</h3>
+      <i>(for "admin access": username: maxwilson and password: pass123)</i>
+
       <br />
       <form onSubmit={submitForm}>
         <input
@@ -130,15 +130,68 @@ export default function Home() {
         <a className={stylesGlobal.link}>Page Names: Folder Names</a>
       </Link>
       <hr className={stylesGlobal.horizontalLine} />
+      <h2>EXAMPLE OF PUBLIC FILES:</h2>
       <h3>
         {/* OMIT PUBLIC: <Link href="../../public/about.txt"> */}
-        <Link href="../../about.txt">
-          <a className={stylesGlobal.link}>File public/about.txt</a>
-        </Link>
-        <br />
-        <Link href="../../foldera/file_a.txt">
-          <a className={stylesGlobal.link}>File public/foldera/file_a.txt</a>
-        </Link>
+        <p className={styles.titlePath}>
+          <span className={styles.fontRedBold}>
+            <b>Path:</b>
+          </span>{" "}
+          public/about.txt
+        </p>
+        <a
+          className={stylesGlobal.link}
+          href="../../about.txt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          about.txt
+        </a>
+        <div className={styles.marginBottom10} />
+        <p className={styles.titlePath}>
+          <span className={styles.fontRedBold}>
+            <b>Path:</b>
+          </span>{" "}
+          public/folder-a/file_a.txt
+        </p>
+        <a
+          className={stylesGlobal.link}
+          href="../../folder-a/file_a.txt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          file_a.txt
+        </a>
+        <div className={styles.marginBottom10} />
+        <p className={styles.titlePath}>
+          <span className={styles.fontRedBold}>
+            <b>Path:</b>
+          </span>{" "}
+          public/images/maxmixlogo.jpg
+        </p>
+        <a
+          className={stylesGlobal.link}
+          href="../../images/maxmixlogo.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          maxmixlogo.jpg
+        </a>
+        <div className={styles.marginBottom10} />
+        <p className={styles.titlePath}>
+          <span className={styles.fontRedBold}>
+            <b>Path:</b>
+          </span>{" "}
+          public/o-sentido-da-vida/o-sentido-da-vida.pdf
+        </p>
+        <a
+          className={stylesGlobal.link}
+          href="../../o-sentido-da-vida/o-sentido-da-vida.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          o-sentido-da-vida.pdf
+        </a>
       </h3>
       <hr className={stylesGlobal.horizontalLine} />
     </div>

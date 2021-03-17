@@ -13,6 +13,20 @@ $fontColor: darkred;
   color: $fontColor;
   font-size: 15vw;
 }
+.titlePath {
+  margin: 0;
+  font-size: 20px;
+}
+.fontRedBold {
+  color: rgb(167, 1, 1);
+  font-weight: bold;
+}
+.fontRedBold:hover {
+  color: rgb(100, 1, 1);
+}
+.marginBottom10 {
+  margin-bottom: 10px;
+}
 @media (min-width: 800px) {
   .title {
     font-size: 100px;
@@ -38,7 +52,6 @@ $fontColor: darkred;
   border-width: 0px;
   box-shadow: inset 0px 0px 5px 2px rgb(0, 0, 0);
 }
-
 .btnLogin {
   color: white !important;
   background-color: rgb(143, 150, 182);
@@ -57,7 +70,12 @@ $fontColor: darkred;
 .goToLink:hover {
   text-shadow: 1px 1px #000000;
 }
-
 .maxmixlogo {
   border-radius: 20%;
+}
+/* ***** MOBILE ***** */
+@media (max-width: 700px) {
+  .titlePath {
+    font-size: 1.2rem;
+  }
 }

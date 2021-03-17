@@ -8,10 +8,11 @@ export default function RoutesLevel2() {
   return (
     <div className={styles.container}>
       <h1>Dynamic Routing Level 2!</h1>
-
       <br />
       <Link href="/routes">
-        <a className={styles.btnHome}>Back to Level 1</a>
+        <button className={[styles.btnHome, styles.btnHomeGreen].join(" ")}>
+          <a className={styles.linkFontWhite}>Back to Level 1</a>
+        </button>
       </Link>
     </div>
   );
