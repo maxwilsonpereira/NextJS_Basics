@@ -59,7 +59,7 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
         </div>
       ) : (
         <>
-          <h1>Dinamic Rendering with React useState</h1>
+          <h1>CSR - Client Side Render with UseEffect</h1>
           <h2>
             <i>
               I need time to load, because I need to fetch the data every time
@@ -68,37 +68,35 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
           </h2>
           <hr className={styles.horizontalLine} />
           <h2 className={styles.marginBottom5}>
-            The data on this page was fetched using useEffect (run time
-            fetching). That means that all the data will need to be fetched
+            The data on this page was fetched at run time at the client side
+            using the function useEffect. All the data will need to be fetched
             again every time the page is loaded or refreshed.
             <br />
             The time it takes to load the page will be always the same
             (depending on the connection).
             <br />
             Using "getStaticProps" would make it much faster after the first
-            visit.
+            visit!
             <br />
             <span className={styles.fontRed}>
               * Same amount of data being fetched on each page!
             </span>
           </h2>
           <hr className={styles.horizontalLine} />
-          <h2>Press the button "Static" to come back to the preview page:</h2>
+          <h2>Press the button "SSG" to come back to the preview page:</h2>
           <br />
           <button
             className={[styles.btnHome, styles.btnHomeGreen].join(" ")}
             onClick={toggleComponentHandler}
           >
-            Static
+            SSR
           </button>
           <br />
           <button className={styles.btnHome} onClick={backToHome}>
             Back to Home
           </button>
           <hr className={styles.horizontalLine} />
-          <h2>
-            Some of the data fetched using React useEffect on the client side:
-          </h2>
+          <h2>Some of the data fetched using useEffect on the client side:</h2>
           <br />
           {fetchedData.map((data, index) => (
             <h4 key={data.id}>

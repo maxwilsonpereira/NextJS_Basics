@@ -77,23 +77,26 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
         <DynamicComponent toggleComponentHandler={toggleComponentHandler} />
       ) : (
         <div className={styles.container}>
-          <h1>GetStaticProps - Static Site Generation (SSG)</h1>
+          <h1>SSR - Server Side Render with GetStaticProps</h1>
           <h2>
             <i>Look how fast I am!</i>
           </h2>
           <hr className={styles.horizontalLine} />
           <h2>
-            The data on this page was fetched at buid time, that means the data
-            was fetched only once and from that moment it will stay on the
-            client side as if the page would be a static page.
+            The data on this page was fetched at buid time on the client side.
+            The data was fetched only once and this page will stay like it is as
+            if it would be a static page. This is also called:{" "}
+            <span className={styles.fontRed}>
+              Static Site Generation (SSG).
+            </span>
             <br />
-            The page is loaded much faster (almost instantly) after the first
-            time it was visited and this method of rendering improves a lot the
-            SEO engines.
+            The page loads much faster (almost instantly) after the first time
+            it was visited and this method of rendering improves a lot the SEO
+            engines.
           </h2>
           <h3 className={styles.marginBottom5}>
-            A "revalidate" attribute can be used inside getStaticProps function
-            to make it fetch the data again after a desired time.
+            A "revalidate" attribute can be used inside the getStaticProps
+            function to make it fetch the data again after a desired time.
           </h3>
           <h2>
             <span className={styles.fontRed}>
@@ -102,15 +105,15 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
           </h2>
           <hr className={styles.horizontalLine} />
           <h2>
-            Press the button "Dynamic" to the same page being rendered using
-            React useEffect, that means, dynamically:
+            Press the button "CSR" to see the same page being rendered on the
+            client side:
           </h2>
           <br />
           <button
             className={[styles.btnHome, styles.btnHomeGreen].join(" ")}
             onClick={toggleComponentHandler}
           >
-            Dynamic
+            CSR
           </button>
           <br />
           <button className={styles.btnHome} onClick={backToHome}>
