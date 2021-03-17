@@ -46,8 +46,14 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
       ) : (
         <>
           <h1>Dinamic Rendering with React useState</h1>
-          <hr className={styles.horizontalLine} />
           <h2>
+            <i>
+              I need time to load, because I need to fetch the data every time
+              you come back to me!
+            </i>
+          </h2>
+          <hr className={styles.horizontalLine} />
+          <h2 className={styles.marginBottom5}>
             The data on this page was fetched using useEffect (run time
             fetching). That means that all the data will need to be fetched
             again every time the page is loaded or refreshed.
@@ -82,9 +88,9 @@ const DynamicRendering: React.FC<PageProps> = ({ toggleComponentHandler }) => {
           <br />
           {fetchedData.map((data, index) => (
             <h4 key={data.id}>
-              <span className={styles.fontRed}>NAME: </span>
-              {data.name} / <span className={styles.fontRed}>EMAIL:</span>{" "}
-              {data.email}
+              <span className={styles.fontRed}>EMAIL: </span>
+              {data.email} / <span className={styles.fontRed}>TITLE:</span>{" "}
+              {data.name}
             </h4>
           ))}
           <hr className={styles.horizontalLine} />

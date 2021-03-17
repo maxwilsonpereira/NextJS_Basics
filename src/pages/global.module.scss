@@ -7,7 +7,7 @@ $fontColor: darkred;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
 }
 .container h1 {
   color: $fontColor;
@@ -87,31 +87,34 @@ $fontColor: darkred;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.marginBottom5 {
+  margin-bottom: 5px;
+}
 
 /* ***** MOBILE ***** */
 @media (max-width: 600px) {
   .container h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .container h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .container h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .container h4 {
     font-size: 1rem;
   }
   .link {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .link:hover {
     color: rgb(0, 0, 58);
   }
   .linkRed {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .fontLarger {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }

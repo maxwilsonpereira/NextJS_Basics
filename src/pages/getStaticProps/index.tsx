@@ -72,7 +72,9 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
       ) : (
         <div className={styles.container}>
           <h1>GetStaticProps - Static Site Generation (SSG)</h1>
-          <h2>Look how fast I am!</h2>
+          <h2>
+            <i>Look how fast I am!</i>
+          </h2>
           <hr className={styles.horizontalLine} />
           <h2>
             The data on this page will be fetched at buid time, that means the
@@ -83,9 +85,9 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
             time it was visited and this method of rendering improves a lot the
             SEO engines.
           </h2>
-          <h3>
+          <h3 className={styles.marginBottom5}>
             A "revalidate" attribute can be used inside getStaticProps function
-            to make it fetch the data agina after a disered time.
+            to make it fetch the data again after a desired time.
           </h3>
           <h2>
             <span className={styles.fontRed}>
@@ -116,9 +118,9 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
           {fetchedData &&
             fetchedData.map((data) => (
               <h4 key={data.id}>
-                <span className={styles.fontRed}>NAME: </span>
-                {data.name} / <span className={styles.fontRed}>EMAIL:</span>{" "}
-                {data.email}
+                <span className={styles.fontRed}>EMAIL: </span>
+                {data.email} / <span className={styles.fontRed}>TITLE:</span>{" "}
+                {data.name}
               </h4>
             ))}
           <hr className={styles.horizontalLine} />
