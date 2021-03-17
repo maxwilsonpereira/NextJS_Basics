@@ -36,6 +36,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
     fetchedDataAux[i] = await fetchSimulation[i].json();
   }
+  // Captalizing the first letter:
+  fetchedDataAux[0].forEach(function (element, index) {
+    const firstLetter = element.name.substr(0, 1);
+    fetchedDataAux[0][index].name =
+      firstLetter.toUpperCase() + element.name.substr(1);
+  });
 
   return {
     props: {
@@ -120,7 +126,7 @@ export default function GetStaticPropsIndex({ textFromFile, fetchedData }) {
               <h4 key={data.id}>
                 <span className={styles.fontRed}>EMAIL: </span>
                 {data.email} / <span className={styles.fontRed}>TITLE:</span>{" "}
-                {data.name}
+                {data.name}.
               </h4>
             ))}
           <hr className={styles.horizontalLine} />

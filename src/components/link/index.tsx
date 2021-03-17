@@ -4,8 +4,9 @@ import styles from "../../pages/global.module.scss";
 export default function LinkExample() {
   return (
     <>
+      <h2>CLICK TO SEE EXAMPLE OF:</h2>
       <Link href="/route/whatever">
-        <a className={styles.link}>Routing Example</a>
+        <a className={styles.link}>Routing</a>
       </Link>
       <br />
       <Link href="/routes/whatever/Max%20Wilson">

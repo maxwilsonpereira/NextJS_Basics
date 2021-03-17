@@ -102,6 +102,7 @@ export default function Home() {
         </>
       ) : null}
       <hr className={stylesGlobal.horizontalLine} />
+      <h2>CLICK TO SEE EXAMPLE OF:</h2>
       <h2>
         <Link href="/getStaticProps">
           <a
@@ -109,22 +110,21 @@ export default function Home() {
               " "
             )}
           >
-            getStaticProps Example
+            getStaticProps
           </a>
         </Link>
         <br />
         <Link href="/getStaticPaths/route1">
-          <a className={stylesGlobal.linkRed}>getStaticPaths Example</a>
+          <a className={stylesGlobal.linkRed}>getStaticPaths</a>
         </Link>
         <br />
         <Link href="/getServerSideProps">
-          <a className={stylesGlobal.linkRed}>getServerSideProps Example</a>
+          <a className={stylesGlobal.linkRed}>getServerSideProps</a>
         </Link>
       </h2>
       <hr className={stylesGlobal.horizontalLine} />
       <LinkExample />
-      <br />
-      <br />
+      <hr className={stylesGlobal.horizontalLine} />
       <Link href="/pagenames">
         <a className={stylesGlobal.link}>Page Names with Folder Structure</a>
       </Link>
@@ -139,9 +139,7 @@ export default function Home() {
           <a className={stylesGlobal.link}>File public/foldera/file_a.txt</a>
         </Link>
       </h3>
-      <br />
-      <br />
-      <br />
+      <hr className={stylesGlobal.horizontalLine} />
     </div>
   );
 }
