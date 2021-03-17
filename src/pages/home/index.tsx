@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>This Title is just for SEO!</title>
+        <title>Next.js Basics</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <span className={styles.title}>Next.ts</span>

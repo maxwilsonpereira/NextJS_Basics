@@ -14,7 +14,7 @@ export default function Profile() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>This Title is just for SEO!</title>
+        <title>Next.js Basics</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {router.query.admin === "yes" ? (
