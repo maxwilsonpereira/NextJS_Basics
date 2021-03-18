@@ -139,7 +139,7 @@ export default function Home() {
       <h3>
         {/* OMIT PUBLIC: <Link href="../../public/about.txt"> */}
         <p className={styles.titlePath}>
-          <span className={styles.fontRedBold}>
+          <span className={styles.fontRedNoHover}>
             <b>Path:</b>
           </span>{" "}
           public/about.txt
@@ -154,7 +154,7 @@ export default function Home() {
         </a>
         <div className={styles.marginBottom10} />
         <p className={styles.titlePath}>
-          <span className={styles.fontRedBold}>
+          <span className={styles.fontRedNoHover}>
             <b>Path:</b>
           </span>{" "}
           public/folder-a/file_a.txt
@@ -169,7 +169,7 @@ export default function Home() {
         </a>
         <div className={styles.marginBottom10} />
         <p className={styles.titlePath}>
-          <span className={styles.fontRedBold}>
+          <span className={styles.fontRedNoHover}>
             <b>Path:</b>
           </span>{" "}
           public/images/maxmixlogo.jpg
@@ -184,7 +184,7 @@ export default function Home() {
         </a>
         <div className={styles.marginBottom10} />
         <p className={styles.titlePath}>
-          <span className={styles.fontRedBold}>
+          <span className={styles.fontRedNoHover}>
             <b>Path:</b>
           </span>{" "}
           public/o-sentido-da-vida/o-sentido-da-vida.pdf
