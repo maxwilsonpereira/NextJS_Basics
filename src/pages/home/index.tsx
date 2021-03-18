@@ -69,15 +69,20 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h3 className={stylesGlobal.link}>Source code on gitHub</h3>
+        <h3
+          className={[stylesGlobal.link, stylesGlobal.displayInlineBlock].join(
+            " "
+          )}
+        >
+          Source code on gitHub
+        </h3>
       </a>
       <hr className={stylesGlobal.horizontalLine} />
       {/* <form method="POST" action="/api/login"> */}
       <h2>LOGIN SIMULATION:</h2>
       <h3>Login simulation using the native Next.js API:</h3>
       <i>(for "admin access": username: maxwilson and password: pass123)</i>
-
-      <br />
+      <div className={styles.marginBottom10} />
       <form onSubmit={submitForm}>
         <input
           type="text"

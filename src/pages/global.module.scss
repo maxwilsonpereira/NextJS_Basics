@@ -102,6 +102,9 @@ $fontColor: darkred;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.displayInlineBlock {
+  display: inline-block;
+}
 
 /* ***** MOBILE ***** */
 @media (max-width: 700px) {
