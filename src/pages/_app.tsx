@@ -10,8 +10,9 @@ function MyApp({ Component, pageProps }) {
   console.log(
     "HELLO FROM _app.tsx! AVAILABLE on the server and on the client side!"
   );
+
   // Internally, NEXT.JS passes all the pages on this <Component/> as props,
-  // beginning with the file index.tsx:
+  // beginning with the file index.tsx
   return (
     <>
       <NextNprogress
